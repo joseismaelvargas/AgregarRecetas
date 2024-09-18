@@ -1,14 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import {BrowserRouter,Routes ,Route}from "react-router-dom"
+import { Index } from "./page/Index"
+import { Agregar} from "./page/Agregar"
+import { Administrar } from "./page/Administrar"
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-     <h1>Aqui van las REcetas</h1>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Index></Index>}></Route>
+      <Route path="/administrar" element={<Administrar></Administrar>}></Route>
+      <Route path="/agregar" element={<Agregar></Agregar>}></Route>
+    </Routes>
+    </BrowserRouter>
+    
     </>
   )
 }
